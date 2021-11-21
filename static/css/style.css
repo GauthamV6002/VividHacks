@@ -226,3 +226,15 @@ html {
   #likes-list-group {
     margin: 10px 5px;
   }
+
+  #evaluate-buttons {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+  
+  #evaluate-buttons .btn {
+    padding: 10px;
+    margin: 10px;
+    font-size: 24px;
+  }

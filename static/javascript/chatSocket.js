@@ -2,8 +2,14 @@ $(document).ready(() => {
     var socket = io.connect('http://127.0.0.1:5000/');
     let username = null;
 
-    myMsg = $("#myMessage")
-    sb = $("#sendButton")
+    let myMsg = $("#myMessage");
+    let sb = $("#sendButton");
+
+    let srry = $("#srry");
+    let nice = $("#nice");
+
+    srry.hide();
+    nice.hide();
 
     $.ajax({
         url: "http://127.0.0.1:5000/getuser",
@@ -17,7 +23,7 @@ $(document).ready(() => {
     });
 
     socket.on('message', msg => {
-            $('#messages').append(`<li class="list-group-item">${msg}</li>`);
+        $('#messages').append(`<li class="list-group-item">${msg}</li>`);
     });
 
     sb.click(() => {
@@ -25,12 +31,24 @@ $(document).ready(() => {
         myMsg.val('');
     });
 
-    $(document).keypress(function (e) { 
-        if(e.which == 13){
+    $(document).keypress(function (e) {
+        if (e.which == 13) {
             socket.send(`<span class="badge username-badge bg-secondary">${username}</span>${myMsg.val()}`);
             myMsg.val('');
         }
-        
+
+    });
+
+    $("#ratebad").click(() => {
+        $("#evaluate-buttons").fadeOut();
+        setTimeout(() => { srry.fadeIn() }, 400);
+        setTimeout(() => { srry.fadeOut() }, 7400);
+    });
+
+    $("#rategood").click(() => {
+        $("#evaluate-buttons").fadeOut();
+        setTimeout(() => { nice.fadeIn() }, 400);
+        setTimeout(() => { nice.fadeOut() }, 1900);
     });
 
 });
