@@ -10,47 +10,48 @@
 
 
 {% block body %}
+<div class="back">
+    <div class="container chat-popup">
+        <div class="card">
+            <div class="car-header">
+                <h4 class="chatTitle">Chat 06</h4>
+                <h6>Chatting with 
+                <span class="badge username-badge bg-secondary">{{chatters[0]}}</span>,
+                <span class="badge username-badge bg-secondary">{{chatters[1]}}</span>, and
+                <span class="badge username-badge bg-secondary">{{chatters[2]}}</span>
+                </h6>
+            </div>
+            
+            <hr>
 
-<div class="container chat-popup">
-    <div class="card">
-        <div class="car-header">
-            <h4 class="chatTitle">Chat 06</h4>
-            <h6>Chatting with 
-            <span class="badge username-badge bg-secondary">{{chatters[0]}}</span>,
-            <span class="badge username-badge bg-secondary">{{chatters[1]}}</span>, and
-            <span class="badge username-badge bg-secondary">{{chatters[2]}}</span>
-            </h6>
+            <div class="card-body messageDiv">
+                <ul id="messages" class="messages list-group">
+                </ul>
+            </div>
+
+            <hr>
+
+            <div class="card-footer sendMSG">
+                <input type="text" name="myMessage" id="myMessage" class="form-control" placeholder="Send a message...">
+                <button class="btn-primary" id="sendButton">Send Message ✉️</button>
+            </div>
+
+            </div>
         </div>
-        
-        <hr>
 
-        <div class="card-body messageDiv">
-            <ul id="messages" class="messages list-group">
-            </ul>
+        <div class="container" id="evaluate-buttons">
+            <h4 style="color: white">Rate:</h4> 
+            <br>
+            <button class="btn btn-success btn-sm" id="rategood">👍</button>
+            <button class="btn btn-danger btn-sm" id="ratebad">👎</button>
+        </div>
+        <div class="container" id="evaluate-buttons"> 
+            <h4 id="srry">We're sorry to hear that! <a href="chat">Find someone new?</a></h4>
+            <h4 id="nice">Great to hear!</h4>
+
         </div>
 
-        <hr>
-
-        <div class="card-footer sendMSG">
-            <input type="text" name="myMessage" id="myMessage" class="form-control" placeholder="Send a message...">
-            <button class="btn-primary" id="sendButton">Send Message ✉️</button>
-        </div>
-
-        </div>
     </div>
-
-    <div class="container" id="evaluate-buttons">
-        <h4>Rate:</h4> 
-        <br>
-        <button class="btn btn-success btn-sm" id="rategood">👍</button>
-        <button class="btn btn-danger btn-sm" id="ratebad">👎</button>
-    </div>
-    <div class="container" id="evaluate-buttons"> 
-        <h4 id="srry">We're sorry to hear that! <a href="chat">Find someone new?</a></h4>
-        <h4 id="nice">Great to hear!</h4>
-
-    </div>
-
 </div>
 
 {% endblock %}

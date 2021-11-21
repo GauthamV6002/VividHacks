@@ -47,7 +47,7 @@ def getMatches(user, groupsize):
     if len(potential_group) >= groupsize:
         return sample(potential_group, groupsize)
     elif potential_group:
-        return potential_group
+        return (potential_group + sample(User.query.all(), groupsize - len(potential_group))) 
     else:
         return sample(User.query.all(), groupsize)
 
