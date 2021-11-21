@@ -8,58 +8,77 @@
 {% block title %}Register for Astrodome{% endblock %}
 
 {% block body %}
-<form action="/register" method="post">
-    <input type="text" name="username" id="username" placeholder="Username"class="form-control inp">
-    <input type="password" name="password" id="get_password" placeholder="Password" class="form-control inp">
-    <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" class="form-control inp">
-    <input type="submit" value="Register!" class="btn-outline-primary inp">
-
-    <div class="container likesSection">
-        <div class="card-header">
-            <h1>What do you like?</h1>            
-        </div>
-        <div class="card-body GetLikes"> 
-            <div class="list-group">
-                <li class="list-group-item">Gardening  <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Writing <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Journaling <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Making coffee <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Foraging  <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Poetry <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Partying <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Organization <input type="checkbox" name="likes"> </li>
-            </div>
-            <div class="list-group">
-                <li class="list-group-item">Skiing <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Snowboarding <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Roller skating <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Ice skating  <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Crystals <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Drawing  <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Game Development  <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Sculpting <input type="checkbox" name="likes"> </li>
-            </div>
-            <div class="list-group">
-                <li class="list-group-item">Music <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Video games <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Collecting  <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Building models <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Bird-watching  <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Nature walks <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Bicycling <input type="checkbox" name="likes"> </li>
-                <li class="list-group-item">Coding <input type="checkbox" name="likes"> </li>
-            </div>
-        </div>
-        <!-- <div class="card-footer">
-            <h4>{{likes_err}}</h4>
-        </div> -->
-    </div>
-
-
-</form>
-
 <div class="container">
-    <div class="hideIfEmpty alert alert-danger">{{ err }}</div>
+    <div class="login-main" id="reg-main">
+
+        <div class="container">
+        <div class="card" id="nomcard">
+
+            <div class="card-header">
+            <h1 class="loginTitle">Register for Astrodome!</h1>
+            </div>
+
+            <div class="card-body">
+            <form action="/register" method="post">
+
+                <input type="text" name="username" id="username" placeholder="Username"class="form-control inp">
+                <input type="password" name="password" id="get_password" placeholder="Password" class="form-control inp">
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" class="form-control inp">
+                
+                <div class="hideIfEmpty alert alert-danger">{{ err }}</div>
+
+                <div class="card-sm nomcard">
+                    <div class="card-header">
+                        <h5 class="card-title">What do you like to do?</h5>
+                    </div>
+                    <div class="card-body GetLikes"> 
+                        <div class="list-group" id="likes-list-group">
+                            <li class="list-group-item">Gardening  <input type="checkbox" name="likes" value="Gardening "> </li>
+                            <li class="list-group-item">Writing <input type="checkbox" name="likes" value="Writing"> </li>
+                            <li class="list-group-item">Journaling <input type="checkbox" name="likes" value="Journaling"> </li>
+                            <li class="list-group-item">Making coffee <input type="checkbox" name="likes" value="Making coffee"> </li>
+                            <li class="list-group-item">Poetry <input type="checkbox" name="likes" value="Poetry"> </li>
+                            <li class="list-group-item">Organization <input type="checkbox" name="likes" value="Organization"> </li>
+                            <li class="list-group-item">Skiing <input type="checkbox" name="likes" value="Skiing"> </li>
+                            <li class="list-group-item">Snowboarding <input type="checkbox" name="likes" value="Snowboarding"> </li>
+                            <li class="list-group-item">Roller skating <input type="checkbox" name="likes" value="Roller skating"> </li>
+                            <li class="list-group-item">Ice skating <input type="checkbox" name="likes" value="Ice skating "> </li>
+                            
+                        </div>
+                        <div class="list-group" id="likes-list-group">
+                            <li class="list-group-item">Drawing  <input type="checkbox" name="likes" value="Drawing "> </li>
+                            <li class="list-group-item">Sculpting <input type="checkbox" name="likes" value="Sculpting"> </li>
+                            <li class="list-group-item">Music <input type="checkbox" name="likes" value="Music"> </li>
+                            <li class="list-group-item">Video games <input type="checkbox" name="likes" value="Video games"> </li>
+                            <li class="list-group-item">Game Development <input type="checkbox" name="likes" value="Board games"> </li>
+                            <li class="list-group-item">Cooking  <input type="checkbox" name="likes" value="Cooking "> </li>
+                            <li class="list-group-item">Photography <input type="checkbox" name="likes" value="Photography"> </li>
+                            <li class="list-group-item">Astronomy  <input type="checkbox" name="likes" value="Astronomy "> </li>
+                            <li class="list-group-item">Astrology <input type="checkbox" name="likes" value="Astrology"> </li>
+                            <li class="list-group-item">Snow <input type="checkbox" name="likes" value="Snow"> </li>
+                        </div>
+                        <div class="list-group" id="likes-list-group">
+                            <li class="list-group-item">Partying <input type="checkbox" name="likes" value="Partying"> </li>
+                            <li class="list-group-item">The beach <input type="checkbox" name="likes" value="The beach"> </li>
+                            <li class="list-group-item">Excerising  <input type="checkbox" name="likes" value="The wilderness "> </li>
+                            <li class="list-group-item">Holidays  <input type="checkbox" name="likes" value="Holidays "> </li>
+                            <li class="list-group-item">Collecting  <input type="checkbox" name="likes" value="Collecting "> </li>
+                            <li class="list-group-item">Building models <input type="checkbox" name="likes" value="Building models"> </li>
+                            <li class="list-group-item">Baking  <input type="checkbox" name="likes" value="Baking "> </li>
+                            <li class="list-group-item">Bird-watching  <input type="checkbox" name="likes" value="Bird-watching "> </li>
+                            <li class="list-group-item">Nature walks <input type="checkbox" name="likes" value="Nature walks"> </li>
+                            <li class="list-group-item">Coding <input type="checkbox" name="likes" value="Bicycling"> </li>
+                        </div>
+                    </div>
+                </div>
+            <div class="card-footer">
+                <input type="submit" value="Register!" class="btn-primary btn-lg inp">
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
+
 

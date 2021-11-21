@@ -36,11 +36,6 @@ nav img:hover {
     transform: scale(1.2) rotate(5deg);
 }
 
-.inp {
-    margin: 20px;
-    transition: 200ms ease-in-out;
-}
-
 .loginTitle {
     margin: 20px;
 }
@@ -197,4 +192,37 @@ html {
     left: 50%;
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
+  }
+
+  .inp {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: 200ms ease-in-out;
+  }
+
+
+  .login-main div .card {
+    width: 50vw;
+  }
+
+  .login-main img {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    
+    z-index: -10;
+
+    width: 70vw;
+    height: 100vh;
+  }
+
+  #nomcard {
+    padding: 0px; 
+    border-radius: 15px;
+  }
+
+  #likes-list-group {
+    margin: 10px 5px;
   }

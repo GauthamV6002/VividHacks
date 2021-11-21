@@ -6,19 +6,32 @@ Login to Astrodome
 
 
 {% block body %}
-  <div class="container"><h1 class="loginTitle">Login to your Account</h1></div>
-  <div class="container">
-    <form action="/login" method="post">
-      <input type="text" name="username" id="get_username" placeholder="Username" class="form-control inp">
-      <input type="password" name="password" id="get_password" placeholder="Password" class="form-control inp">
-      <input type="submit" value="Login" class="btn-outline-primary inp">
-    </form>
-  </div>
-    <div class="container">
-        <div class="hideIfEmpty alert alert-danger">{{ err }}</div>
-    </div>
+
+  <div class="login-main">
 
     <div class="container">
-      <a href="{{ url_for('register')}}"><button class="btn btn-success">Don't have an account? Register!</button></a>
+      <div class="card" id="nomcard">
+
+        <div class="card-header">
+          <h1 class="loginTitle">Login to your Account</h1>
+        </div>
+
+        <div class="card-body">
+          <form action="/login" method="post">
+
+            <input type="text" name="username" id="get_username" placeholder="Username" class="form-control inp">
+            <input type="password" name="password" id="get_password" placeholder="Password" class="form-control inp">
+
+              <div class="hideIfEmpty alert alert-danger">{{ err }}</div>
+
+        <div class="card-footer">
+          <input type="submit" value="Login" class="btn-primary btn-lg inp">
+          <button onclick="window.open('register')"class="btn btn-success">Don't have an account? Register!</button>
+        </form>
+        </div>
+      </div>
     </div>
+
+    <!-- <img src="https://i.ibb.co/Jv8dk0x/Untitled-design-removebg-preview-1.png" alt="The World"> -->
+  </div>
 {% endblock %}

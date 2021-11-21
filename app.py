@@ -2,8 +2,8 @@ from flask import Flask, render_template, url_for, redirect, request, session, g
 from flask.json import jsonify
 from flask_socketio import SocketIO, send
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
-import random
+import time
+from random import sample 
 
 '''
 DATABASE_SCHEMA
@@ -31,6 +31,25 @@ class User(db.Model):
         return f'{self.id}.{self.username}'
 
 app.secret_key = 'An4aa(and5}{\]d[f||Asdm14;kd-03L,LK*@#HD#!ah3DSFsad()u)(#$'
+
+def getMatches(user, groupsize):
+    potential_group =  list(User.query.filter_by(like1 = user.like1).all())
+    potential_group += list(User.query.filter_by(like2 = user.like2).all())
+    potential_group += list(User.query.filter_by(like3 = user.like3).all())
+
+    print('\nMATCHER1:', potential_group, '\n')
+
+    while user in potential_group:
+        potential_group.remove(user)
+
+    print('\nMATCHER:', potential_group, '\n')
+
+    if len(potential_group) >= groupsize:
+        return sample(potential_group, groupsize)
+    elif potential_group:
+        return potential_group
+    else:
+        return sample(User.query.all(), groupsize)
 
 @app.before_request
 def before_request():
@@ -76,7 +95,7 @@ def register():
                 return render_template('register.html', err="Passwords do not match!")
 
         likes = request.form.getlist('likes')
-        three_likes = random.sample(likes, 3)
+        three_likes = sample(likes, 3)
 
         try:
             new_user = User(username=username, password=password, like1=three_likes[0], like2=three_likes[1], like3=three_likes[2])
@@ -97,7 +116,7 @@ def handle_message(msg):
 def chat():
     if not g.user:
         return redirect('/login')
-    return render_template('chat.html')
+    return render_template('chat.html', chatters=[u.username for u in getMatches(g.user, 4)])
 
 @app.route('/getuser')
 def getUser():
@@ -110,10 +129,6 @@ def getUser():
     else:
         return redirect('/login')
 
-
-@app.route('/i2')
-def i_two():
-    return render_template('temp.html')
 
 if __name__ == '__main__':
     socketio.run(app)
