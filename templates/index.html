@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Astrodome | Home
+{% endblock %}
+
+
+{% block body %}
+<p class="display-1"> Hello World! </p>
+<div class="container">
+    <div class="alert hideIfEmpty alert-danger">Logged in as {{g.user.username}}! </div>
+</div>
+{% endblock %}

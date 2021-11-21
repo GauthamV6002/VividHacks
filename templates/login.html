@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login to Astrodome
+{% endblock %}
+
+
+{% block body %}
+  <div class="container"><h1 class="loginTitle">Login to your Account</h1></div>
+  <div class="container">
+    <form action="/login" method="post">
+      <input type="text" name="username" id="get_username" placeholder="Username" class="form-control inp">
+      <input type="password" name="password" id="get_password" placeholder="Password" class="form-control inp">
+      <input type="submit" value="Login" class="btn-outline-primary inp">
+    </form>
+  </div>
+    <div class="container">
+        <div class="hideIfEmpty alert alert-danger">{{ err }}</div>
+    </div>
+
+    <div class="container">
+      <a href="{{ url_for('register')}}"><button class="btn btn-success">Don't have an account? Register!</button></a>
+    </div>
+{% endblock %}

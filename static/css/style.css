@@ -1,0 +1,51 @@
+.inp {
+    margin: 20px;
+    transition: 200ms ease-in-out;
+}
+
+.loginTitle {
+    margin: 20px;
+}
+
+.chat-popup {
+    margin: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: none;
+
+    transition: 200ms ease-in-out;
+}
+
+.chat-popup:hover {
+    background-color: rgba(139, 139, 139, 0.3);
+}
+
+.card {
+    padding: 8px;
+}
+
+.messages {
+    margin: 20px 40px;
+}
+
+.sendMSG {
+    display: flex;
+}
+
+.sendMSG input {
+    margin: 10px 20px;
+}
+
+.sendMSG button {
+    margin: 10px 20px;
+    padding: 10px;
+    width: 200px;
+    border-radius: 8px;
+}
+
+.username-badge {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 10px;
+}

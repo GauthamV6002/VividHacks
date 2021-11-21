@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+{% endblock %}
+
+
+{% block title %}Register for Astrodome{% endblock %}
+
+{% block body %}
+<form action="/register" method="post">
+    <input type="text" name="username" id="username" placeholder="Username"class="form-control inp">
+    <input type="password" name="password" id="get_password" placeholder="Password" class="form-control inp">
+    <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" class="form-control inp">
+    <input type="submit" value="Register!" class="btn-outline-primary inp">
+</form>
+
+<div class="container">
+    <div class="hideIfEmpty alert alert-danger">{{ err }}</div>
+</div>
+{% endblock %}
