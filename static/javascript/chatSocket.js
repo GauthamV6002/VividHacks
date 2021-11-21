@@ -21,7 +21,16 @@ $(document).ready(() => {
     });
 
     sb.click(() => {
-        socket.send(`<span class="badge username-badge bg-secondary">${username}</span>${myMsg.val()}`)
-    })
+        socket.send(`<span class="badge username-badge bg-secondary">${username}</span>${myMsg.val()}`);
+        myMsg.val('');
+    });
+
+    $(document).keypress(function (e) { 
+        if(e.which == 13){
+            socket.send(`<span class="badge username-badge bg-secondary">${username}</span>${myMsg.val()}`);
+            myMsg.val('');
+        }
+        
+    });
 
 });

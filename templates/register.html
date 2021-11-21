@@ -13,9 +13,53 @@
     <input type="password" name="password" id="get_password" placeholder="Password" class="form-control inp">
     <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" class="form-control inp">
     <input type="submit" value="Register!" class="btn-outline-primary inp">
+
+    <div class="container likesSection">
+        <div class="card-header">
+            <h1>What do you like?</h1>            
+        </div>
+        <div class="card-body GetLikes"> 
+            <div class="list-group">
+                <li class="list-group-item">Gardening  <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Writing <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Journaling <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Making coffee <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Foraging  <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Poetry <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Partying <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Organization <input type="checkbox" name="likes"> </li>
+            </div>
+            <div class="list-group">
+                <li class="list-group-item">Skiing <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Snowboarding <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Roller skating <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Ice skating  <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Crystals <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Drawing  <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Game Development  <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Sculpting <input type="checkbox" name="likes"> </li>
+            </div>
+            <div class="list-group">
+                <li class="list-group-item">Music <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Video games <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Collecting  <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Building models <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Bird-watching  <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Nature walks <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Bicycling <input type="checkbox" name="likes"> </li>
+                <li class="list-group-item">Coding <input type="checkbox" name="likes"> </li>
+            </div>
+        </div>
+        <!-- <div class="card-footer">
+            <h4>{{likes_err}}</h4>
+        </div> -->
+    </div>
+
+
 </form>
 
 <div class="container">
     <div class="hideIfEmpty alert alert-danger">{{ err }}</div>
 </div>
 {% endblock %}
+

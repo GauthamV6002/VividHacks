@@ -1,3 +1,41 @@
+nav {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav p {
+    color: black;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 2em;
+
+    margin: 10px 30px;
+
+    transition: 200ms ease-in-out;
+}
+
+nav p:hover {
+    color: lightblue;
+    cursor: pointer;
+    transform: scale(1.4);
+}
+
+nav img {
+    width: 190px;
+    height: 100px;
+
+    margin: 20px 30px;
+
+    transition: 200ms ease-in-out;
+}
+
+nav img:hover {
+    cursor: pointer;
+    transform: scale(1.2) rotate(5deg);
+}
+
 .inp {
     margin: 20px;
     transition: 200ms ease-in-out;
@@ -5,6 +43,12 @@
 
 .loginTitle {
     margin: 20px;
+}
+
+.GetLikes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .chat-popup {
@@ -49,3 +93,108 @@
     margin-left: 5px;
     margin-right: 10px;
 }
+/* index */
+
+html {
+    font-family: "Montserrat";
+  }
+  
+  h1 {
+    font-family: "Montserrat";
+  }
+  
+  .back {
+    background-image: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg');
+    height: 85vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .dark-back {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ), url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg');
+  }
+  
+  .banner {
+    height: 15vh;
+    transition: height 1s;
+  }
+  
+  .banner:hover {
+    height: 20vh;
+  }
+  
+  .meet {
+    color: white;
+    width: 95vw;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    font-family: "Montserrat";
+  }
+  
+  .meet:hover {
+    color: white;
+  }
+  
+  .meet-bold {
+    font-weight: bold;
+    font-size: 40px;
+    transition: color 1s, font-size 1s
+  }
+  
+  .meet-bold:hover {
+    color: white;
+    font-size: 50px;
+    width: 95vw;
+  }
+  
+  .white {
+    color: white;
+    font-family: "Montserrat";
+    font-weight: 500;
+  }
+  
+  .teal {
+    color: deepskyblue;
+  }
+  
+  .teal:hover {
+    color: cyan;
+  }
+  
+  .border {
+    border: 2px solid white;
+  }
+  
+  .backed {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  
+  .center-text {
+    text-align: center;
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
+  
+  .footer {
+    text-align: center;
+  }
+  
+  .absolute-center {
+    position: absolute;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  
+  #login-submit {
+    position: absolute;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }

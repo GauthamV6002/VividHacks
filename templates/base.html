@@ -12,6 +12,12 @@
     <script src="{{ url_for('static', filename='javascript/script.js')}}"></script>
     <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;800&display=swap" rel="stylesheet">
+
 
     {% block head %}
     
@@ -20,6 +26,11 @@
   <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
+  <nav>
+    <a href="{{ url_for('login')}}"><p class="login">Login</p></a>
+    <a href="{{ url_for('index')}}"><img class="nav-logo" src="{{ url_for('static', filename='images/white_backing_logo.png')}}"/></a>
+    <a href="{{ url_for('chat')}}"><p class="chat">Chat</p></a>
+  </nav>
 
   {% block body %}
   
